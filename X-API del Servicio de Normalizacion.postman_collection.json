@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "b0b5bdd1-7b03-4cec-81b0-f6a756154192",
+		"name": "X-API del Servicio de Normalización de Datos Geográficos de Argentina",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Busqueda de Provincias (x nombre)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/provincias?nombre=Sgo. del Estero",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"provincias"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Sgo. del Estero"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busqueda de Provincias (Total)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/provincias",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"provincias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busqueda de Departamentos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/departamentos?provincia=jujuy&max=16",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"departamentos"
+							],
+							"query": [
+								{
+									"key": "provincia",
+									"value": "jujuy"
+								},
+								{
+									"key": "max",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busqueda de Municipios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/municipios?provincia=tucuman&aplanar",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"municipios"
+							],
+							"query": [
+								{
+									"key": "provincia",
+									"value": "tucuman"
+								},
+								{
+									"key": "aplanar",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busqueda de Localidades",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/localidades?provincia=chubut&campos=nombre",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"localidades"
+							],
+							"query": [
+								{
+									"key": "provincia",
+									"value": "chubut"
+								},
+								{
+									"key": "campos",
+									"value": "nombre"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Normalización de direcciones",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/direcciones?departamento=merlo&direccion=Florida%20al%202950",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"direcciones"
+							],
+							"query": [
+								{
+									"key": "departamento",
+									"value": "merlo"
+								},
+								{
+									"key": "direccion",
+									"value": "Florida%20al%202950"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de calles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apis.datos.gob.ar/georef/api/calles?departamento=rio%20chico&categoria=avenida",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"datos",
+								"gob",
+								"ar"
+							],
+							"path": [
+								"georef",
+								"api",
+								"calles"
+							],
+							"query": [
+								{
+									"key": "departamento",
+									"value": "rio%20chico"
+								},
+								{
+									"key": "categoria",
+									"value": "avenida"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
